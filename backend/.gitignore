@@ -4,3 +4,5 @@ db.sqlite3
 staticfiles/
 __pycache__/
 *.py[cod]
+runserver.out.log
+runserver.err.log
