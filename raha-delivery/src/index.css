@@ -1,0 +1,111 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+  --bg: #f6f8f4;
+  --surface: rgba(255, 255, 255, 0.78);
+  --surface-strong: #ffffff;
+  --line: rgba(15, 23, 42, 0.08);
+  --text: #102018;
+  --muted: #597063;
+  --brand: #156f43;
+  --brand-deep: #0d4f31;
+  --accent: #f29f3f;
+  --accent-soft: #ffe4bf;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  font-family: 'Manrope', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  background:
+    radial-gradient(circle at top left, rgba(21, 111, 67, 0.12), transparent 28%),
+    radial-gradient(circle at top right, rgba(242, 159, 63, 0.14), transparent 24%),
+    linear-gradient(180deg, #fcfdf9 0%, var(--bg) 48%, #eef4ef 100%);
+  color: var(--text);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+@layer components {
+  .shell {
+    @apply mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8;
+  }
+
+  .page-section {
+    @apply shell py-10 sm:py-12 lg:py-16;
+  }
+
+  .hero-card {
+    background: linear-gradient(145deg, rgba(255, 255, 255, 0.94), rgba(255, 255, 255, 0.76));
+    border: 1px solid var(--line);
+    box-shadow: 0 24px 60px rgba(14, 37, 25, 0.08);
+    @apply rounded-[2rem];
+  }
+
+  .glass-card {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    box-shadow: 0 18px 45px rgba(14, 37, 25, 0.07);
+    backdrop-filter: blur(12px);
+    @apply rounded-[1.75rem];
+  }
+
+  .section-kicker {
+    color: var(--accent);
+    letter-spacing: 0.18em;
+    @apply text-xs font-extrabold uppercase;
+  }
+
+  .section-title {
+    @apply text-3xl font-extrabold tracking-tight text-slate-950 sm:text-4xl;
+  }
+
+  .section-copy {
+    color: var(--muted);
+    @apply text-base leading-7 sm:text-lg;
+  }
+
+  .primary-button {
+    background: linear-gradient(135deg, var(--brand), var(--brand-deep));
+    @apply inline-flex items-center justify-center gap-2 rounded-full px-5 py-3 font-semibold text-white transition duration-300 hover:-translate-y-0.5 hover:shadow-xl;
+  }
+
+  .secondary-button {
+    border: 1px solid rgba(21, 111, 67, 0.22);
+    background: rgba(255, 255, 255, 0.82);
+    color: var(--brand);
+    @apply inline-flex items-center justify-center gap-2 rounded-full px-5 py-3 font-semibold transition duration-300 hover:-translate-y-0.5 hover:bg-green-50;
+  }
+
+  .info-pill {
+    background: rgba(242, 159, 63, 0.14);
+    color: #8f4c00;
+    @apply inline-flex items-center rounded-full px-3 py-1 text-sm font-semibold;
+  }
+
+  .feature-card {
+    background: rgba(255, 255, 255, 0.72);
+    border: 1px solid rgba(15, 23, 42, 0.08);
+    @apply rounded-[1.5rem] p-6 transition duration-300 hover:-translate-y-1 hover:border-emerald-200 hover:shadow-xl;
+  }
+}
